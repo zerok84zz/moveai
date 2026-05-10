@@ -1,6 +1,5 @@
-"use client"
+"use client";
 import { useState, useEffect, useRef } from "react";
-
 const COLORS = {
   bg: "#050814",
   bgCard: "rgba(255,255,255,0.04)",
@@ -27,7 +26,7 @@ const CITIES_DATA = [
 const DEMAND_COLOR = { "Very High": "#68D391", "High": "#63B3ED", "Medium": "#F6AD55", "Low": "#FC8181" };
 
 function GlowOrb({ x, y, color, size = 400 }) {
-  return (
+  return (function GlowOrb({ x, y, color, size = 400 }: { x: string; y: string; color: string; size?: number }) {
     <div style={{
       position: "absolute", left: x, top: y, width: size, height: size,
       borderRadius: "50%", background: color, filter: "blur(120px)",
