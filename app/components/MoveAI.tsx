@@ -11,15 +11,16 @@ interface CityData {
   city: string; country: string; flag: string; score: number; salary: number;
   rent: number; col: number; jobDemand: string; savings: number; reloDifficulty: number;
   reason: string; iata: string; spotahome: string; indeed: string; linkedin: string;
+  adzunaLocation: string;
 }
 
 const CITIES_DATA: CityData[] = [
-  { city: "Berlin", country: "Germany", flag: "🇩🇪", score: 94, salary: 72000, rent: 1100, col: 2200, jobDemand: "Very High", savings: 2800, reloDifficulty: 3, reason: "Thriving tech ecosystem with booming demand for your profile. Low bureaucracy for EU candidates and an English-friendly startup scene make integration seamless.", iata: "BER", spotahome: "berlin", indeed: "Berlin%2C+Germany", linkedin: "berlin-germany" },
-  { city: "Amsterdam", country: "Netherlands", flag: "🇳🇱", score: 91, salary: 78000, rent: 1600, col: 2600, jobDemand: "High", savings: 2500, reloDifficulty: 3, reason: "Top-tier international hub with exceptional English proficiency and world-class quality of life. Strong job market with many global HQs nearby.", iata: "AMS", spotahome: "amsterdam", indeed: "Amsterdam%2C+Netherlands", linkedin: "amsterdam-netherlands" },
-  { city: "Lisbon", country: "Portugal", flag: "🇵🇹", score: 88, salary: 42000, rent: 900, col: 1600, jobDemand: "High", savings: 1900, reloDifficulty: 2, reason: "Europe's fastest-growing startup ecosystem. Low cost of living, warm weather, and a massive expat-friendly community. NHR tax regime is highly favorable.", iata: "LIS", spotahome: "lisbon", indeed: "Lisbon%2C+Portugal", linkedin: "lisbon-portugal" },
-  { city: "Toronto", country: "Canada", flag: "🇨🇦", score: 85, salary: 92000, rent: 1900, col: 3100, jobDemand: "Very High", savings: 3200, reloDifficulty: 4, reason: "North America's tech corridor outside SV. Extremely open immigration policy and a deeply multicultural society make settling in feel immediate.", iata: "YYZ", spotahome: "toronto", indeed: "Toronto%2C+ON", linkedin: "toronto-canada" },
-  { city: "Barcelona", country: "Spain", flag: "🇪🇸", score: 83, salary: 48000, rent: 1200, col: 1900, jobDemand: "Medium", savings: 1400, reloDifficulty: 3, reason: "Exceptional lifestyle paired with a growing tech scene. Moderate job competition but outstanding work-life balance and climate.", iata: "BCN", spotahome: "barcelona", indeed: "Barcelona%2C+Spain", linkedin: "barcelona-spain" },
-  { city: "Singapore", country: "Singapore", flag: "🇸🇬", score: 80, salary: 98000, rent: 2400, col: 3800, jobDemand: "High", savings: 2900, reloDifficulty: 4, reason: "Asia's financial and tech gateway. Tax-efficient jurisdiction, world-class infrastructure, and strategic access to Southeast Asian markets.", iata: "SIN", spotahome: "singapore", indeed: "Singapore", linkedin: "singapore" },
+  { city: "Berlin", country: "Germany", flag: "🇩🇪", score: 94, salary: 72000, rent: 1100, col: 2200, jobDemand: "Very High", savings: 2800, reloDifficulty: 3, reason: "Thriving tech ecosystem with booming demand for your profile. Low bureaucracy for EU candidates and an English-friendly startup scene make integration seamless.", iata: "BER", spotahome: "berlin", indeed: "Berlin%2C+Germany", linkedin: "berlin-germany", adzunaLocation: "berlin" },
+  { city: "Amsterdam", country: "Netherlands", flag: "🇳🇱", score: 91, salary: 78000, rent: 1600, col: 2600, jobDemand: "High", savings: 2500, reloDifficulty: 3, reason: "Top-tier international hub with exceptional English proficiency and world-class quality of life. Strong job market with many global HQs nearby.", iata: "AMS", spotahome: "amsterdam", indeed: "Amsterdam%2C+Netherlands", linkedin: "amsterdam-netherlands", adzunaLocation: "amsterdam" },
+  { city: "Lisbon", country: "Portugal", flag: "🇵🇹", score: 88, salary: 42000, rent: 900, col: 1600, jobDemand: "High", savings: 1900, reloDifficulty: 2, reason: "Europe's fastest-growing startup ecosystem. Low cost of living, warm weather, and a massive expat-friendly community. NHR tax regime is highly favorable.", iata: "LIS", spotahome: "lisbon", indeed: "Lisbon%2C+Portugal", linkedin: "lisbon-portugal", adzunaLocation: "lisbon" },
+  { city: "Toronto", country: "Canada", flag: "🇨🇦", score: 85, salary: 92000, rent: 1900, col: 3100, jobDemand: "Very High", savings: 3200, reloDifficulty: 4, reason: "North America's tech corridor outside SV. Extremely open immigration policy and a deeply multicultural society make settling in feel immediate.", iata: "YYZ", spotahome: "toronto", indeed: "Toronto%2C+ON", linkedin: "toronto-canada", adzunaLocation: "toronto" },
+  { city: "Barcelona", country: "Spain", flag: "🇪🇸", score: 83, salary: 48000, rent: 1200, col: 1900, jobDemand: "Medium", savings: 1400, reloDifficulty: 3, reason: "Exceptional lifestyle paired with a growing tech scene. Moderate job competition but outstanding work-life balance and climate.", iata: "BCN", spotahome: "barcelona", indeed: "Barcelona%2C+Spain", linkedin: "barcelona-spain", adzunaLocation: "barcelona" },
+  { city: "Singapore", country: "Singapore", flag: "🇸🇬", score: 80, salary: 98000, rent: 2400, col: 3800, jobDemand: "High", savings: 2900, reloDifficulty: 4, reason: "Asia's financial and tech gateway. Tax-efficient jurisdiction, world-class infrastructure, and strategic access to Southeast Asian markets.", iata: "SIN", spotahome: "singapore", indeed: "Singapore", linkedin: "singapore", adzunaLocation: "singapore" },
 ];
 
 const DEMAND_COLOR: Record<string, string> = {
@@ -27,10 +28,10 @@ const DEMAND_COLOR: Record<string, string> = {
 };
 
 const labelStyle: React.CSSProperties = { display: "block", fontSize: 14, color: COLORS.textSub, marginBottom: 10, fontWeight: 500 };
-const inputStyle: React.CSSProperties = { width: "100%", background: "rgba(255,255,255,0.05)", border: `1px solid ${COLORS.border}`, borderRadius: 10, padding: "12px 16px", color: COLORS.text, fontSize: 15, outline: "none", boxSizing: "border-box", marginBottom: 20, fontFamily: "inherit" };
+const inputStyle: React.CSSProperties = { width: "100%", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: "12px 16px", color: COLORS.text, fontSize: 15, outline: "none", boxSizing: "border-box", marginBottom: 20, fontFamily: "inherit" };
 const chipStyle = (active: boolean): React.CSSProperties => ({
   background: active ? "linear-gradient(135deg, rgba(99,179,237,0.2), rgba(159,122,234,0.2))" : "rgba(255,255,255,0.04)",
-  border: active ? "1px solid rgba(99,179,237,0.5)" : `1px solid ${COLORS.border}`,
+  border: active ? "1px solid rgba(99,179,237,0.5)" : "1px solid rgba(255,255,255,0.08)",
   borderRadius: 8, padding: "8px 14px", color: active ? COLORS.text : COLORS.textSub,
   fontSize: 13, cursor: "pointer", transition: "all 0.2s", fontFamily: "inherit", whiteSpace: "nowrap",
 });
@@ -39,6 +40,16 @@ interface FormState {
   profession: string; jobTitle: string; years: string; languages: string[];
   country: string; city: string; savings: string; monthlyBudget: string;
   preferredCountries: string[]; remote: string; lifestyle: string[]; reloPriority: string;
+}
+
+interface AdzunaJob {
+  id: string;
+  title: string;
+  company: { display_name: string };
+  salary_min?: number;
+  salary_max?: number;
+  redirect_url: string;
+  description: string;
 }
 
 function GlowOrb({ x, y, color, size = 400 }: { x: string; y: string; color: string; size?: number }) {
@@ -53,7 +64,7 @@ function ScoreRing({ score, size = 56 }: { score: number; size?: number }) {
   return (
     <svg width={size} height={size} style={{ transform: "rotate(-90deg)" }}>
       <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="4" />
-      <circle cx={size/2} cy={size/2} r={r} fill="none" stroke={color} strokeWidth="4" strokeDasharray={`${dash} ${circ}`} strokeLinecap="round" style={{ transition: "stroke-dasharray 1.2s" }} />
+      <circle cx={size/2} cy={size/2} r={r} fill="none" stroke={color} strokeWidth="4" strokeDasharray={`${dash} ${circ}`} strokeLinecap="round" />
       <text x={size/2} y={size/2} textAnchor="middle" dominantBaseline="central" style={{ transform: "rotate(90deg)", transformOrigin: `${size/2}px ${size/2}px`, fill: color, fontSize: 13, fontWeight: 700, fontFamily: "inherit" }}>{score}</text>
     </svg>
   );
@@ -61,7 +72,7 @@ function ScoreRing({ score, size = 56 }: { score: number; size?: number }) {
 
 function Navbar({ setPage }: { setPage: (p: string) => void }) {
   return (
-    <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, borderBottom: `1px solid ${COLORS.border}`, background: "rgba(5,8,20,0.8)", backdropFilter: "blur(20px)", padding: "0 2rem", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+    <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, borderBottom: "1px solid rgba(255,255,255,0.08)", background: "rgba(5,8,20,0.8)", backdropFilter: "blur(20px)", padding: "0 2rem", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10, cursor: "pointer" }} onClick={() => setPage("landing")}>
         <div style={{ width: 32, height: 32, borderRadius: 8, background: "linear-gradient(135deg, #63B3ED, #9F7AEA)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16 }}>✦</div>
         <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 20, color: COLORS.text }}>Move<span style={{ color: COLORS.accent }}>AI</span></span>
@@ -104,7 +115,7 @@ function Landing({ setPage }: { setPage: (p: string) => void }) {
           <p style={{ fontSize: "clamp(1rem, 2vw, 1.2rem)", color: COLORS.textSub, maxWidth: 560, margin: "0 auto 48px", lineHeight: 1.7 }}>MoveAI analyzes thousands of data points — salaries, rent, job markets, visa complexity — to find your perfect city to live and work.</p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <button onClick={() => setPage("onboarding")} style={{ background: "linear-gradient(135deg, #63B3ED, #9F7AEA)", border: "none", color: "#fff", fontSize: 16, fontWeight: 600, padding: "14px 36px", borderRadius: 10, cursor: "pointer", boxShadow: "0 0 40px rgba(99,179,237,0.4)" }}>Find My City →</button>
-            <button style={{ background: "transparent", border: `1px solid ${COLORS.border}`, color: COLORS.text, fontSize: 16, padding: "14px 36px", borderRadius: 10, cursor: "pointer" }}>Watch Demo</button>
+            <button style={{ background: "transparent", border: "1px solid rgba(255,255,255,0.08)", color: COLORS.text, fontSize: 16, padding: "14px 36px", borderRadius: 10, cursor: "pointer" }}>Watch Demo</button>
           </div>
         </div>
         <div style={{ position: "relative", zIndex: 1, marginTop: 80, display: "flex", gap: 48, flexWrap: "wrap", justifyContent: "center" }}>
@@ -125,13 +136,13 @@ function Landing({ setPage }: { setPage: (p: string) => void }) {
             { icon: "🧠", title: "AI City Matching", desc: "Our model weighs 60+ signals — salary bands, visa ease, housing, social fit — to surface only your top matches." },
             { icon: "✈️", title: "Flight Search", desc: "Direct links to Google Flights and Skyscanner with your origin and destination pre-filled." },
             { icon: "🏠", title: "Rental Finder", desc: "Browse real apartments on Spotahome and HousingAnywhere filtered by your target city." },
-            { icon: "💼", title: "Job Board Links", desc: "Search open positions in your field on LinkedIn and Indeed with one click." },
+            { icon: "💼", title: "Real Job Listings", desc: "Live job offers from Adzuna pulled in real time for your profession in each recommended city." },
             { icon: "💬", title: "AI Relocation Chat", desc: "Ask anything. Our AI assistant has deep knowledge of neighbourhoods, communities, and transition tips." },
             { icon: "📊", title: "Real-time Data", desc: "Rent indexes, salary surveys, and cost-of-living data refreshed monthly from verified global sources." },
           ].map(({ icon, title, desc }) => (
-            <div key={title} style={{ background: COLORS.bgCard, border: `1px solid ${COLORS.border}`, borderRadius: 16, padding: "28px 24px", transition: "border-color 0.3s, transform 0.2s" }}
+            <div key={title} style={{ background: COLORS.bgCard, border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16, padding: "28px 24px", transition: "border-color 0.3s, transform 0.2s" }}
               onMouseOver={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(99,179,237,0.3)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; }}
-              onMouseOut={e => { (e.currentTarget as HTMLDivElement).style.borderColor = COLORS.border; (e.currentTarget as HTMLDivElement).style.transform = "none"; }}>
+              onMouseOut={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.08)"; (e.currentTarget as HTMLDivElement).style.transform = "none"; }}>
               <div style={{ fontSize: 32, marginBottom: 16 }}>{icon}</div>
               <h3 style={{ fontSize: 18, fontWeight: 600, marginBottom: 10 }}>{title}</h3>
               <p style={{ fontSize: 14, color: COLORS.textSub, lineHeight: 1.7, margin: 0 }}>{desc}</p>
@@ -232,13 +243,13 @@ function Onboarding({ setPage, setProfile }: { setPage: (p: string) => void; set
             <span style={{ fontSize: 13, color: COLORS.textMuted }}>{step + 1} / {STEPS.length}</span>
           </div>
         </div>
-        <div style={{ background: "rgba(255,255,255,0.03)", border: `1px solid ${COLORS.border}`, borderRadius: 20, padding: "2rem", backdropFilter: "blur(20px)" }}>
+        <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 20, padding: "2rem", backdropFilter: "blur(20px)" }}>
           <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: 24, fontWeight: 700, marginBottom: 8, color: COLORS.text }}>{STEPS[step].label}</h2>
           <p style={{ fontSize: 14, color: COLORS.textMuted, marginBottom: 28 }}>Help our AI understand your profile for personalized city matches.</p>
           {stepContent[step]}
         </div>
         <div style={{ display: "flex", gap: 12, marginTop: 20 }}>
-          {step > 0 && <button onClick={() => setStep(s => s - 1)} style={{ flex: 1, background: "rgba(255,255,255,0.05)", border: `1px solid ${COLORS.border}`, color: COLORS.text, padding: "14px", borderRadius: 10, cursor: "pointer", fontSize: 15 }}>Back</button>}
+          {step > 0 && <button onClick={() => setStep(s => s - 1)} style={{ flex: 1, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", color: COLORS.text, padding: "14px", borderRadius: 10, cursor: "pointer", fontSize: 15 }}>Back</button>}
           <button onClick={handleNext} disabled={!canNext()} style={{ flex: 2, background: canNext() ? "linear-gradient(135deg, #63B3ED, #9F7AEA)" : "rgba(255,255,255,0.1)", border: "none", color: canNext() ? "#fff" : COLORS.textMuted, padding: "14px", borderRadius: 10, cursor: canNext() ? "pointer" : "default", fontSize: 15, fontWeight: 600 }}>
             {step === STEPS.length - 1 ? "Analyze My Profile" : "Continue"}
           </button>
@@ -248,32 +259,78 @@ function Onboarding({ setPage, setProfile }: { setPage: (p: string) => void; set
   );
 }
 
+function JobListings({ city, profession }: { city: CityData; profession: string }) {
+  const [jobs, setJobs] = useState<AdzunaJob[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setError(false);
+    fetch("/api/jobs?profession=" + encodeURIComponent(profession || "software engineer") + "&location=" + encodeURIComponent(city.adzunaLocation))
+      .then(r => r.json())
+      .then(data => {
+        setJobs(data.results || []);
+        setLoading(false);
+      })
+      .catch(() => { setError(true); setLoading(false); });
+  }, [city.city, profession]);
+
+  return (
+    <div style={{ marginTop: 20 }}>
+      <div style={{ fontSize: 12, color: COLORS.accentGreen, fontWeight: 600, marginBottom: 12 }}>💼 Live Job Listings in {city.city}</div>
+      {loading && (
+        <div style={{ display: "flex", gap: 6, alignItems: "center", padding: "16px", background: "rgba(255,255,255,0.03)", borderRadius: 10 }}>
+          {[0, 1, 2].map(i => <div key={i} style={{ width: 6, height: 6, borderRadius: "50%", background: COLORS.accent, animation: `bounce 1s ${i * 0.2}s infinite` }} />)}
+          <span style={{ fontSize: 13, color: COLORS.textMuted, marginLeft: 8 }}>Fetching live jobs...</span>
+        </div>
+      )}
+      {error && <p style={{ fontSize: 13, color: COLORS.textMuted }}>Could not load jobs. Try again later.</p>}
+      {!loading && !error && jobs.length === 0 && (
+        <p style={{ fontSize: 13, color: COLORS.textMuted }}>No listings found right now. Try searching on LinkedIn or Indeed below.</p>
+      )}
+      {!loading && jobs.map(job => (
+        <a key={job.id} href={job.redirect_url} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}
+          style={{ display: "block", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: "14px 16px", marginBottom: 10, textDecoration: "none", transition: "all 0.2s" }}
+          onMouseOver={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = COLORS.accentGreen; (e.currentTarget as HTMLAnchorElement).style.background = "rgba(104,211,145,0.06)"; }}
+          onMouseOut={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.08)"; (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.04)"; }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12 }}>
+            <div style={{ flex: 1 }}>
+              <div style={{ fontSize: 14, fontWeight: 600, color: COLORS.text, marginBottom: 4 }}>{job.title}</div>
+              <div style={{ fontSize: 12, color: COLORS.textMuted }}>{job.company?.display_name}</div>
+              {job.salary_min && <div style={{ fontSize: 12, color: COLORS.accentGreen, marginTop: 4 }}>£{Math.round(job.salary_min / 1000)}K{job.salary_max ? " - £" + Math.round(job.salary_max / 1000) + "K" : "+"}</div>}
+            </div>
+            <span style={{ fontSize: 11, color: COLORS.accent, whiteSpace: "nowrap" }}>View ↗</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  );
+}
+
 function ResourceLinks({ city, profession, originCity }: { city: CityData; profession: string; originCity: string }) {
   const origin = originCity || "Madrid";
   const jobQuery = encodeURIComponent(profession || "software engineer");
   const links = [
-    { icon: "✈️", label: "Search Flights", sublabel: "Google Flights", color: "#63B3ED", url: `https://www.google.com/travel/flights?q=flights+to+${city.iata}+from+${encodeURIComponent(origin)}` },
-    { icon: "✈️", label: "Compare Prices", sublabel: "Skyscanner", color: "#63B3ED", url: `https://www.skyscanner.com/transport/flights/${encodeURIComponent(origin)}/${city.iata}/` },
-    { icon: "🏠", label: "Find Apartments", sublabel: "Spotahome", color: "#9F7AEA", url: `https://www.spotahome.com/s/${city.spotahome}` },
-    { icon: "🏠", label: "Browse Rentals", sublabel: "HousingAnywhere", color: "#9F7AEA", url: `https://housinganywhere.com/s/${city.city}--${city.country}` },
-    { icon: "💼", label: "Find Jobs", sublabel: "LinkedIn", color: "#68D391", url: `https://www.linkedin.com/jobs/search/?keywords=${jobQuery}&location=${city.linkedin}` },
-    { icon: "💼", label: "Job Search", sublabel: "Indeed", color: "#68D391", url: `https://www.indeed.com/jobs?q=${jobQuery}&l=${city.indeed}` },
+    { icon: "✈️", label: "Google Flights", color: "#63B3ED", url: "https://www.google.com/travel/flights?q=flights+to+" + city.iata + "+from+" + encodeURIComponent(origin) },
+    { icon: "✈️", label: "Skyscanner", color: "#63B3ED", url: "https://www.skyscanner.com/transport/flights/" + encodeURIComponent(origin) + "/" + city.iata + "/" },
+    { icon: "🏠", label: "Spotahome", color: "#9F7AEA", url: "https://www.spotahome.com/s/" + city.spotahome },
+    { icon: "🏠", label: "HousingAnywhere", color: "#9F7AEA", url: "https://housinganywhere.com/s/" + city.city + "--" + city.country },
+    { icon: "💼", label: "LinkedIn Jobs", color: "#68D391", url: "https://www.linkedin.com/jobs/search/?keywords=" + jobQuery + "&location=" + city.linkedin },
+    { icon: "💼", label: "Indeed", color: "#68D391", url: "https://www.indeed.com/jobs?q=" + jobQuery + "&l=" + city.indeed },
   ];
   return (
-    <div style={{ marginTop: 20 }}>
-      <div style={{ fontSize: 12, color: COLORS.accent, fontWeight: 600, marginBottom: 12 }}>🔗 Resources for {city.city}</div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 10 }}>
-        {links.map(({ icon, label, sublabel, color, url }) => (
-          <a key={sublabel} href={url} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}
-            style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, textDecoration: "none", transition: "all 0.2s" }}
+    <div style={{ marginTop: 16 }}>
+      <div style={{ fontSize: 12, color: COLORS.accent, fontWeight: 600, marginBottom: 12 }}>🔗 More Resources</div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 8 }}>
+        {links.map(({ icon, label, color, url }) => (
+          <a key={label} href={url} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}
+            style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 12px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, textDecoration: "none", transition: "all 0.2s" }}
             onMouseOver={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = color; (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.08)"; }}
             onMouseOut={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.08)"; (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.04)"; }}>
-            <span style={{ fontSize: 18 }}>{icon}</span>
-            <div style={{ flex: 1 }}>
-              <div style={{ fontSize: 12, fontWeight: 600, color: COLORS.text }}>{label}</div>
-              <div style={{ fontSize: 11, color }}>{sublabel}</div>
-            </div>
-            <span style={{ fontSize: 12, color: COLORS.textMuted }}>↗</span>
+            <span style={{ fontSize: 16 }}>{icon}</span>
+            <span style={{ fontSize: 12, fontWeight: 600, color: COLORS.text }}>{label}</span>
+            <span style={{ marginLeft: "auto", fontSize: 11, color: COLORS.textMuted }}>↗</span>
           </a>
         ))}
       </div>
@@ -284,7 +341,7 @@ function ResourceLinks({ city, profession, originCity }: { city: CityData; profe
 function Dashboard({ profile, setPage }: { profile: FormState | null; setPage: (p: string) => void }) {
   const [activeCity, setActiveCity] = useState<CityData | null>(null);
   const [chatOpen, setChatOpen] = useState(false);
-  const [chatMessages, setChatMessages] = useState([{ role: "ai", text: `Hi! I have analyzed your profile as a ${profile?.profession || "professional"} with ${profile?.years || "several"} years experience. I found 6 excellent city matches. Click any city card to see flights, rentals and job links!` }]);
+  const [chatMessages, setChatMessages] = useState([{ role: "ai", text: "Hi! I have analyzed your profile and found 6 excellent city matches. Click any city card to see live job listings, flights and rentals!" }]);
   const [chatInput, setChatInput] = useState("");
   const [chatLoading, setChatLoading] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
@@ -299,7 +356,7 @@ function Dashboard({ profile, setPage }: { profile: FormState | null; setPage: (
     setChatMessages(m => [...m, { role: "user", text: userMsg }]);
     setChatLoading(true);
     try {
-      const context = `You are MoveAI's relocation assistant. The user is a ${profile?.profession} with ${profile?.years} years experience from ${profile?.country} (city: ${profile?.city}), speaking ${(profile?.languages || []).join(", ")}. They prefer ${profile?.remote} work and savings ${profile?.savings}. They value: ${(profile?.lifestyle || []).join(", ")}. Top matches: ${CITIES_DATA.slice(0, 3).map(c => `${c.city} score:${c.score} salary:$${c.salary} rent:$${c.rent}`).join("; ")}. Dashboard has direct links to flights on Google Flights/Skyscanner, rentals on Spotahome/HousingAnywhere, jobs on LinkedIn/Indeed. Be concise and helpful.`;
+      const context = "You are MoveAI's relocation assistant. The user is a " + profile?.profession + " with " + profile?.years + " years experience from " + profile?.country + " (city: " + profile?.city + "), speaking " + (profile?.languages || []).join(", ") + ". They prefer " + profile?.remote + " work and savings " + profile?.savings + ". They value: " + (profile?.lifestyle || []).join(", ") + ". Top matches: " + CITIES_DATA.slice(0, 3).map(c => c.city + " score:" + c.score + " salary:$" + c.salary + " rent:$" + c.rent).join("; ") + ". The dashboard shows live Adzuna job listings, flights on Google Flights/Skyscanner, rentals on Spotahome/HousingAnywhere, and jobs on LinkedIn/Indeed. Be concise and helpful.";
       const res = await fetch("https://api.anthropic.com/v1/messages", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ model: "claude-sonnet-4-20250514", max_tokens: 1000, system: context, messages: [...chatMessages.filter((m, idx) => m.role !== "ai" || idx > 0).map(m => ({ role: m.role === "ai" ? "assistant" : "user", content: m.text })), { role: "user", content: userMsg }] }) });
       const data = await res.json();
       const reply = data.content?.map((c: { text?: string }) => c.text || "").join("") || "I am here to help!";
@@ -327,7 +384,7 @@ function Dashboard({ profile, setPage }: { profile: FormState | null; setPage: (
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 16, marginBottom: 24 }}>
           {[{ label: "Cities Analyzed", value: "200+", icon: "🌍" }, { label: "Best Match Score", value: "94/100", icon: "⭐" }, { label: "Avg. Monthly Savings", value: "$2,450", icon: "💰" }, { label: "Top Region", value: "W. Europe", icon: "🗺️" }].map(({ label, value, icon }) => (
-            <div key={label} style={{ background: COLORS.bgCard, border: `1px solid ${COLORS.border}`, borderRadius: 14, padding: "18px 20px" }}>
+            <div key={label} style={{ background: COLORS.bgCard, border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, padding: "18px 20px" }}>
               <div style={{ fontSize: 22, marginBottom: 8 }}>{icon}</div>
               <div style={{ fontSize: 20, fontWeight: 700 }}>{value}</div>
               <div style={{ fontSize: 12, color: COLORS.textMuted, marginTop: 2 }}>{label}</div>
@@ -335,12 +392,12 @@ function Dashboard({ profile, setPage }: { profile: FormState | null; setPage: (
           ))}
         </div>
 
-        <p style={{ fontSize: 13, color: COLORS.textMuted, marginBottom: 16 }}>👆 Click any city card to expand flights, rentals and job links</p>
+        <p style={{ fontSize: 13, color: COLORS.textMuted, marginBottom: 16 }}>👆 Click any city to see live jobs, flights and rentals</p>
 
         <div style={{ display: "grid", gap: 16 }}>
           {CITIES_DATA.map((city, i) => (
             <div key={city.city} onClick={() => setActiveCity(activeCity?.city === city.city ? null : city)}
-              style={{ background: activeCity?.city === city.city ? "rgba(99,179,237,0.07)" : COLORS.bgCard, border: `1px solid ${activeCity?.city === city.city ? "rgba(99,179,237,0.4)" : COLORS.border}`, borderRadius: 16, padding: "20px 24px", cursor: "pointer", transition: "all 0.3s", opacity: loaded ? 1 : 0, transform: loaded ? "none" : "translateY(20px)", transitionDelay: `${i * 80}ms` }}>
+              style={{ background: activeCity?.city === city.city ? "rgba(99,179,237,0.07)" : COLORS.bgCard, border: "1px solid " + (activeCity?.city === city.city ? "rgba(99,179,237,0.4)" : "rgba(255,255,255,0.08)"), borderRadius: 16, padding: "20px 24px", cursor: "pointer", transition: "all 0.3s", opacity: loaded ? 1 : 0, transform: loaded ? "none" : "translateY(20px)", transitionDelay: `${i * 80}ms` }}>
               <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, minWidth: 180 }}>
                   <div style={{ fontSize: 12, color: COLORS.textMuted, width: 24, textAlign: "center" }}>#{i + 1}</div>
@@ -349,27 +406,27 @@ function Dashboard({ profile, setPage }: { profile: FormState | null; setPage: (
                 </div>
                 <ScoreRing score={city.score} />
                 <div style={{ display: "flex", gap: 24, flexWrap: "wrap", flex: 1, justifyContent: "flex-end" }}>
-                  {[{ label: "Salary", value: `$${(city.salary / 1000).toFixed(0)}K/yr` }, { label: "Rent", value: `$${city.rent}/mo` }, { label: "Savings", value: `$${city.savings}/mo`, highlight: true }].map(({ label, value, highlight }) => (
+                  {[{ label: "Salary", value: "$" + (city.salary / 1000).toFixed(0) + "K/yr" }, { label: "Rent", value: "$" + city.rent + "/mo" }, { label: "Savings", value: "$" + city.savings + "/mo", highlight: true }].map(({ label, value, highlight }) => (
                     <div key={label} style={{ textAlign: "right" }}>
                       <div style={{ fontSize: 15, fontWeight: 600, color: highlight ? COLORS.accentGreen : COLORS.text }}>{value}</div>
                       <div style={{ fontSize: 11, color: COLORS.textMuted }}>{label}</div>
                     </div>
                   ))}
                   <div style={{ display: "flex", alignItems: "center" }}>
-                    <span style={{ background: `${DEMAND_COLOR[city.jobDemand]}18`, border: `1px solid ${DEMAND_COLOR[city.jobDemand]}40`, color: DEMAND_COLOR[city.jobDemand], borderRadius: 100, padding: "4px 12px", fontSize: 12, fontWeight: 600 }}>{city.jobDemand} Demand</span>
+                    <span style={{ background: DEMAND_COLOR[city.jobDemand] + "18", border: "1px solid " + DEMAND_COLOR[city.jobDemand] + "40", color: DEMAND_COLOR[city.jobDemand], borderRadius: 100, padding: "4px 12px", fontSize: 12, fontWeight: 600 }}>{city.jobDemand} Demand</span>
                   </div>
                 </div>
               </div>
 
               {activeCity?.city === city.city && (
-                <div style={{ marginTop: 20, paddingTop: 20, borderTop: `1px solid ${COLORS.border}` }}>
+                <div style={{ marginTop: 20, paddingTop: 20, borderTop: "1px solid rgba(255,255,255,0.08)" }}>
                   <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 12, marginBottom: 20 }}>
                     {[
-                      { label: "Avg. Salary", value: `$${city.salary.toLocaleString()}/yr` },
-                      { label: "Monthly Rent", value: `$${city.rent}` },
-                      { label: "Cost of Living", value: `$${city.col}/mo` },
-                      { label: "Monthly Savings", value: `$${city.savings}`, color: COLORS.accentGreen },
-                      { label: "Relo Difficulty", value: `${city.reloDifficulty}/10`, color: city.reloDifficulty <= 3 ? COLORS.accentGreen : city.reloDifficulty <= 6 ? "#F6AD55" : "#FC8181" },
+                      { label: "Avg. Salary", value: "$" + city.salary.toLocaleString() + "/yr" },
+                      { label: "Monthly Rent", value: "$" + city.rent },
+                      { label: "Cost of Living", value: "$" + city.col + "/mo" },
+                      { label: "Monthly Savings", value: "$" + city.savings, color: COLORS.accentGreen },
+                      { label: "Relo Difficulty", value: city.reloDifficulty + "/10", color: city.reloDifficulty <= 3 ? COLORS.accentGreen : city.reloDifficulty <= 6 ? "#F6AD55" : "#FC8181" },
                       { label: "Job Demand", value: city.jobDemand, color: DEMAND_COLOR[city.jobDemand] },
                     ].map(({ label, value, color }) => (
                       <div key={label} style={{ background: "rgba(255,255,255,0.04)", borderRadius: 10, padding: "14px 16px" }}>
@@ -382,6 +439,7 @@ function Dashboard({ profile, setPage }: { profile: FormState | null; setPage: (
                     <div style={{ fontSize: 12, color: COLORS.accent, fontWeight: 600, marginBottom: 6 }}>✦ AI Analysis</div>
                     <p style={{ fontSize: 14, color: COLORS.textSub, margin: 0, lineHeight: 1.7 }}>{city.reason}</p>
                   </div>
+                  <JobListings city={city} profession={profile?.profession || "software engineer"} />
                   <ResourceLinks city={city} profession={profile?.profession || ""} originCity={profile?.city || ""} />
                 </div>
               )}
@@ -392,7 +450,7 @@ function Dashboard({ profile, setPage }: { profile: FormState | null; setPage: (
 
       {chatOpen && (
         <div style={{ position: "fixed", bottom: 24, right: 24, width: "min(420px, calc(100vw - 48px))", background: "rgba(10,14,30,0.95)", backdropFilter: "blur(30px)", border: "1px solid rgba(99,179,237,0.3)", borderRadius: 20, display: "flex", flexDirection: "column", height: 520, zIndex: 200, boxShadow: "0 20px 80px rgba(0,0,0,0.6)" }}>
-          <div style={{ padding: "16px 20px", borderBottom: `1px solid ${COLORS.border}`, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <div style={{ padding: "16px 20px", borderBottom: "1px solid rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <div style={{ width: 32, height: 32, borderRadius: 8, background: "linear-gradient(135deg, #63B3ED, #9F7AEA)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14 }}>✦</div>
               <div><div style={{ fontSize: 14, fontWeight: 600 }}>MoveAI Assistant</div><div style={{ fontSize: 11, color: COLORS.accentGreen }}>Online</div></div>
@@ -402,13 +460,13 @@ function Dashboard({ profile, setPage }: { profile: FormState | null; setPage: (
           <div style={{ flex: 1, overflowY: "auto", padding: "16px", display: "flex", flexDirection: "column", gap: 12 }}>
             {chatMessages.map((msg, i) => (
               <div key={i} style={{ display: "flex", justifyContent: msg.role === "user" ? "flex-end" : "flex-start" }}>
-                <div style={{ maxWidth: "85%", padding: "10px 14px", borderRadius: msg.role === "user" ? "14px 14px 4px 14px" : "14px 14px 14px 4px", background: msg.role === "user" ? "linear-gradient(135deg, #63B3ED, #9F7AEA)" : "rgba(255,255,255,0.06)", border: msg.role === "ai" ? `1px solid ${COLORS.border}` : "none", fontSize: 13, lineHeight: 1.6, color: COLORS.text }}>{msg.text}</div>
+                <div style={{ maxWidth: "85%", padding: "10px 14px", borderRadius: msg.role === "user" ? "14px 14px 4px 14px" : "14px 14px 14px 4px", background: msg.role === "user" ? "linear-gradient(135deg, #63B3ED, #9F7AEA)" : "rgba(255,255,255,0.06)", border: msg.role === "ai" ? "1px solid rgba(255,255,255,0.08)" : "none", fontSize: 13, lineHeight: 1.6, color: COLORS.text }}>{msg.text}</div>
               </div>
             ))}
             {chatLoading && <div style={{ display: "flex", gap: 4, padding: "10px 14px" }}>{[0, 1, 2].map(i => <div key={i} style={{ width: 6, height: 6, borderRadius: "50%", background: COLORS.accent, animation: `bounce 1s ${i * 0.2}s infinite` }} />)}</div>}
             <div ref={chatEndRef} />
           </div>
-          <div style={{ padding: "12px 16px", borderTop: `1px solid ${COLORS.border}`, display: "flex", gap: 8 }}>
+          <div style={{ padding: "12px 16px", borderTop: "1px solid rgba(255,255,255,0.08)", display: "flex", gap: 8 }}>
             <input value={chatInput} onChange={e => setChatInput(e.target.value)} onKeyDown={e => e.key === "Enter" && sendChat()} placeholder="Ask about cities, visas, salaries..." style={{ ...inputStyle, margin: 0, flex: 1, fontSize: 13, padding: "10px 14px" }} />
             <button onClick={sendChat} disabled={chatLoading || !chatInput.trim()} style={{ background: "linear-gradient(135deg, #63B3ED, #9F7AEA)", border: "none", borderRadius: 8, padding: "10px 16px", color: "#fff", cursor: "pointer", fontSize: 16, opacity: chatLoading || !chatInput.trim() ? 0.5 : 1 }}>→</button>
           </div>
