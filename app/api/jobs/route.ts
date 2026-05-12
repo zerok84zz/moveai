@@ -8,8 +8,7 @@ export async function GET(req: NextRequest) {
   const appId = process.env.NEXT_PUBLIC_ADZUNA_APP_ID;
   const appKey = process.env.NEXT_PUBLIC_ADZUNA_APP_KEY;
 
-  const country = "gb";
-  const url = https://api.adzuna.com/v1/api/jobs/${country}/search/1?app_id=${appId}&app_key=${appKey}&results_per_page=5&what=${encodeURIComponent(profession)}&where=${encodeURIComponent(location)}&content-type=application/json;
+  const url = "https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=" + appId + "&app_key=" + appKey + "&results_per_page=5&what=" + encodeURIComponent(profession) + "&where=" + encodeURIComponent(location) + "&content-type=application/json";
 
   const res = await fetch(url);
   const data = await res.json();
