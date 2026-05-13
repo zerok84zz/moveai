@@ -29,7 +29,10 @@ const CITY_POOL = [
 ];
 
 export async function POST(req: NextRequest) {
-  const { profession } = await req.json();
+  const body = await req.json();
+const profession = typeof body.profession === "string" 
+  ? body.profession.replace(/[<>'"&;]/g, "").slice(0, 100)
+  : "software engineer";
   const appId = process.env.ADZUNA_APP_ID;
   const appKey = process.env.ADZUNA_APP_KEY;
 
